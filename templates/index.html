@@ -1,0 +1,120 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Music Streaming Service</title>
+  <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+  <link rel="shortcut icon" type="image/png" href="{% static 'img/favicon.png' %}" >
+</head>
+
+<body>
+  <div class="main">
+    <div class="sidebar">
+      <!-- Spotify Logo -->
+      <div class="logo-container">
+        <img src="{% static 'img/logo.svg' %}" alt="Spotify Logo" />
+      </div>
+
+      <!-- Welcome User -->
+      {% if request.user.is_authenticated %}
+      <div class="sidebar-section">
+        <span class="sidebar-link-icon">👤</span>
+        <b>Welcome, {{ name }}</b>
+
+        <a href="{% url 'logout' %}">
+          <span class="sidebar-link-icon">↪️</span>
+          <b>Logout</b>
+        </a>
+      </div>
+      {% endif %}
+
+      <!-- Top section of the sidebar -->
+      <div class="sidebar-section">
+        <a href="{% url 'home' %}" class="sidebar-link active">
+          <span class="sidebar-link-icon">🏠</span>
+          Home
+        </a>
+        <a href="{% url 'search' %}" class="sidebar-link">
+          <span class="sidebar-link-icon">🔍</span>
+          Search
+        </a>
+        <a href="" class="sidebar-link">
+          <span class="sidebar-link-icon">🎵</span>
+          Your Library
+        </a>
+      </div>
+
+      <!-- Bottom section of the sidebar -->
+      <div class="sidebar-section">
+        <a href="#" class="sidebar-link active">
+          <span class="sidebar-link-icon">💜</span>
+          <span class="sidebar-link-text">Liked Songs</span>
+        </a>
+        <!-- Repeat for each item -->
+        
+        <a href="#" class="sidebar-link">
+          <span class="sidebar-link-icon">👤</span>
+          <span class="sidebar-link-text">Arijit Singh</span>
+        </a>
+        <!-- ... more links ... -->
+      </div>
+    </div>
+
+    <div class="right-section">
+      <header class="header-container">
+        <form action="search" method="POST">
+          {% csrf_token %}
+        <div class="search-bar">
+          <input type="search" name="query" placeholder="What do you want to listen to?" aria-label="Search" />
+          <button type="submit" aria-label="Search">🔍</button>
+        </div>
+      </form>
+        {% if not request.user.is_authenticated %}
+        <div class="log-sign-btn">
+          <a href="{% url 'signup' %}"><button><span>Sign up</span></button></a>
+          <a href="{% url 'login' %}"><button><span>Log in</span></button></a>
+        </div>
+        {% endif %}
+      </header>
+      <div class="search-title">Top Artists</div>
+
+      <main class="main-section">
+        <section>
+          <!-- Artist Card -->
+          {% for artist in top_artists %}
+          <div class="artist-card">
+            <a href="/profile/{{artist.id}}">
+            <img src="{{artist.url}}" alt="{{artist.name}}" />
+            <div class="artist-info">
+              <div class="artist-name">{{artist.name}}</div>
+              <div class="artist-title">Artist</div>
+            </div>
+          </a>
+          </div>
+          {% endfor %}
+
+          <!-- Add more content cards here -->
+        </section>
+        <div class="browse-all-title">Top Songs</div>
+
+        <div class="browse-all">
+          <!-- Category Card -->
+           {% for track in tracks %}
+           <a href="music/{{track.id}}">
+             <div class="category-card">
+               <img src="{{track.url}}" alt="{{track.name}}" />
+               <div class="category-title">{{track.name}}</div>
+              </div>
+            </a>
+          {% endfor %}
+
+        </div>
+      </main>
+    </div>
+  </div>
+</body>
+
+</html>

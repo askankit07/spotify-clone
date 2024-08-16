@@ -1,0 +1,100 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Search</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/search-style.css' %}" />
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.1.4/dist/tailwind.min.css" rel="stylesheet" />
+    <link rel="shortcut icon" type="image/png" href="{% static 'img/favicon.png' %}" >
+    <style>
+      .artist-header {
+        background-image: url('https://cdn.punchng.com/wp-content/uploads/2023/05/20120536/Rema.jpeg');
+        background-size: cover;
+        background-position: center;
+        height: 60vh;
+      }
+    </style>
+  </head>
+  <body class="bg-black text-white flex">
+    <!-- Sidebar -->
+    <div class="sidebar">
+      <!-- Spotify Logo -->
+      <div class="logo-container">
+        <img src="{% static 'img/logo.svg' %}" alt="Spotify Logo" style="width: 100%; height: auto; padding: 20px; box-sizing: border-box;" />
+      </div>
+
+      <!-- Top section of the sidebar -->
+      <div class="sidebar-section">
+        <a href="{% url 'home' %}" class="sidebar-link">
+          <span class="sidebar-link-icon">🏠</span>
+          Home
+        </a>
+        <a href="#" class="sidebar-link active">
+          <span class="sidebar-link-icon">🔍</span>
+          Search
+        </a>
+        <a href="#" class="sidebar-link">
+          <span class="sidebar-link-icon">🎵</span>
+          Your Library
+        </a>
+      </div>
+
+      <!-- Bottom section of the sidebar -->
+      <div class="sidebar-section">
+        <a href="#" class="sidebar-link active">
+          <span class="sidebar-link-icon">💜</span>
+          <span class="sidebar-link-text">Liked Songs</span>
+        </a>
+        <!-- Repeat for each item -->
+        
+        <a href="#" class="sidebar-link">
+          <span class="sidebar-link-icon">🎹</span>
+          <span class="sidebar-link-text">Arijit Singh</span>
+        </a>
+        <!-- ... more links ... -->
+      </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="flex-1">
+      <br />
+      <br />
+      <header class="header-container">
+        <form action="search" method="POST">
+          {% csrf_token %}
+          <div class="search-bar" style="width: 390px;">
+            <input type="search" name="query" placeholder="What do you want to listen to?" aria-label="Search" />
+            <button type="submit" aria-label="Search">🔍</button>
+          </div>
+        </form>
+      </header>
+
+      <!-- Popular Tracks Section -->
+      <div class="right-section p-5">
+        <br />
+        <h2 class="text-2xl font-bold mb-4">Search Results</h2>
+        <div class="divide-y divide-gray-800">
+          <!-- Single Track Row -->
+          {% for track in tracks %}
+            <div class="flex justify-between items-center py-3">
+              <a href="{% url 'music' track.Id %}">
+                <div class="flex items-center space-x-4">
+                  <img src="{{ track.url }}" alt="{{ track.Name }}" class="w-12 h-12" />
+                  <div>
+                    <p class="text-base font-medium">{{ track.Name }}</p>
+                    <p class="text-xs text-gray-400">{{ track.artistName }}</p>
+                  </div>
+                </div>
+              </a>
+              <div class="text-gray-400">{{ track.durationText }}</div>
+            </div>
+          {% endfor %}
+          <!-- Repeat for other tracks -->
+        </div>
+        {% comment %} <a href="#" class="text-green-500 text-sm">See more</a> {% endcomment %}
+      </div>
+    </div>
+  </body>
+</html>
