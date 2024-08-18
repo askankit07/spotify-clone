@@ -24,9 +24,17 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-x@!#csgy+!79e(i2n*1t0wj46*mcse5z=e^#g+9cve_xa=h+ul'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ADMINS = [('Ankit goswami', 'askankit07.com')]
+
+
+# ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['5vbsmes7z0.execute-api.us-west-2.amazonaws.com', '5vbsmes7z0.execute-api.us-west-2.amazonaws.com', 'localhost', '127.0.0.1']
+
+
+CSRF_TRUSTED_ORIGINS = ['https://5vbsmes7z0.execute-api.us-west-2.amazonaws.com', 'https://5vbsmes7z0.execute-api.us-west-2.amazonaws.com']
+
 
 
 # Application definition
@@ -74,13 +82,6 @@ WSGI_APPLICATION = 'spotify.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
-
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.sqlite3',
-#         'NAME': BASE_DIR / 'db.sqlite3',
-#     }
-# }
 
 DATABASES = {
     'default': {

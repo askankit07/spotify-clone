@@ -64,7 +64,6 @@ def get_artists(token):
 
         
 def get_several_tracks(token):
-    # track_ids = ["7ouMYWpwJ422jRcDASZB7P","3n3Ppam7vgaVa1iaRUc9Lp","1M4qEo4HE3PRaCOM7EXNJq","4aWmUDTfIPGksMNLV2rQP2","5CQ30WqJwcep0pYcV4AMNc","2XU0oxnq2qxCpomAAuJY8K","3n69hLUdIsSa1WlRmjMZlW","7FIWs0pqAYbP91WWM0vlTQ","3Z8FwOEN59mRMxDCtb8N0A","6habFhsOp2NvshLv26DqMb","7qiZfU4dY1lWllzX7mPBI3","6v3KW9xbzN5yKLt9YKDYA2","5T8EDUDqKcs6OSOwEsfqG7","7BKLCZ1jbUBVqRi2FVlTVw","6K4t31amVTZDgR3sKmwUJJ","2xLMifQCjDGFmkHkpNLD9h","0VjIjW4GlUZAMYd2vXMi3b","6ocbgoVGwYJhOv1GgI9NsF","0e7ipj03S05BNilyu5bRzt","1DFD5Fotzgn6yYXkYsKiGs"]
     track_ids = ["3JWVwlr9TfKMdlBdKPYlKT","56zZ48jdyY2oDXHVnwg5Di","6clAHjokFftNtzUjOfH7WK","0Ms1V2flsPzr2bVqImelCB","15Vuw407y6UWIPUfGrpJ1e","0dLbrlAVPPjpPqnYfmJsWk","2sl6IYSXAOQbEcU1mdqhvR","4i3MgUew8ynhf49Qwr4IP4","1VrheK4CdhX74nrOSNIFtH","3ci9YeXRulpmFPDvqneVwc","05nP1Tsu6yFQ4uP6eSRq4R","6eO9LvEiMqh1CAsa6y3wXP","5zKRKQwLVBT1WDJE7XJrnm","3WJQXRiZQNpasi3i4Tp8U1","6E9UwSfT80age2xknoMS7Y","1EjxJHY9A6LMOlvyZdwDly","2iNqdCchlUZEgjJbQyZf8T","3bzGpKX05I7JADHfbYTBKt","5IKal8GgD5uV7vVtoSTZ4r"]
     url = "https://api.spotify.com/v1/tracks"
     
@@ -294,7 +293,7 @@ def signup(request):
         
         return redirect('login')
 
-    return render(request,"signup.html")
+    return render(request,"signUp.html")
 
 def login_page(request):
     if request.method=="POST":
