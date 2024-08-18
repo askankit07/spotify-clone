@@ -3,6 +3,7 @@ from django.contrib.auth.models import User
 from django.contrib import messages
 from django.contrib.auth import authenticate,login,logout
 from django.contrib.auth.decorators import login_required
+from django.views.decorators.csrf import csrf_protect
 from requests import post,get
 import requests
 import json
@@ -267,6 +268,7 @@ def home(request):
     else:
         return render(request,'index.html',context)    
 
+@csrf_protect
 def signup(request):
     if request.method=="POST":
         first_name=request.POST.get('name')
@@ -295,6 +297,7 @@ def signup(request):
 
     return render(request,"signUp.html")
 
+@csrf_protect
 def login_page(request):
     if request.method=="POST":
         username=request.POST.get('email')
