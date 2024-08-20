@@ -297,6 +297,7 @@ def signup(request):
 
     return render(request,"signUp.html")
 
+
 @csrf_protect
 def login_page(request):
     if request.method=="POST":
