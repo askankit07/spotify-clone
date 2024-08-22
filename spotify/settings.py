@@ -36,7 +36,7 @@ ALLOWED_HOSTS = ['3uvgnj9pk9.execute-api.us-west-2.amazonaws.com', '3uvgnj9pk9.e
 CSRF_TRUSTED_ORIGINS = ['https://3uvgnj9pk9.execute-api.us-west-2.amazonaws.com', 'https://3uvgnj9pk9.execute-api.us-west-2.amazonaws.com']
 
 
-CSRF_COOKIE_SECURE = True
+# CSRF_COOKIE_SECURE = True
 
 
 
