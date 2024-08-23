@@ -334,7 +334,8 @@ def search(request):
 
         tracks=search_query(query,token)
         context={
-            'tracks':tracks
+            'tracks':tracks,
+            'query':query
         }
         
         return render(request,'search.html',context)
