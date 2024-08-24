@@ -29,7 +29,7 @@ DEBUG = True
 ADMINS = [('Ankit goswami', 'askankit07@gmail.com')]
 
 
-# ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # CSRF_COOKIE_SECURE = True
@@ -46,7 +46,6 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'whitenoise.runserver_nostatic',
     'music',
 ]
 
