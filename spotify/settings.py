@@ -31,11 +31,7 @@ ADMINS = [('Ankit goswami', 'askankit07@gmail.com')]
 
 ALLOWED_HOSTS = ['*']
 
-
-# CSRF_COOKIE_SECURE = True
-
-
-
+CSRF_COOKIE_SECURE = True
 
 # Application definition
 
@@ -52,7 +48,6 @@ INSTALLED_APPS = [
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
-    'whitenoise.middleware.WhiteNoiseMiddlewere',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
