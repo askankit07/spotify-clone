@@ -29,7 +29,7 @@ DEBUG = True
 ADMINS = [('Ankit goswami', 'askankit07@gmail.com')]
 
 
-ALLOWED_HOSTS = ['https://9hmn06djz0.execute-api.us-west-2.amazonaws.com']
+ALLOWED_HOSTS = ['127.0.0.1','https://9hmn06djz0.execute-api.us-west-2.amazonaws.com']
 
 CSRF_COOKIE_SECURE = True
 
