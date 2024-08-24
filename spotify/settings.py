@@ -30,10 +30,6 @@ ADMINS = [('Ankit goswami', 'askankit07@gmail.com')]
 
 
 # ALLOWED_HOSTS = []
-ALLOWED_HOSTS = ['3uvgnj9pk9.execute-api.us-west-2.amazonaws.com', '3uvgnj9pk9.execute-api.us-west-2.amazonaws.com', 'localhost', '127.0.0.1']
-
-
-CSRF_TRUSTED_ORIGINS = ['https://3uvgnj9pk9.execute-api.us-west-2.amazonaws.com', 'https://3uvgnj9pk9.execute-api.us-west-2.amazonaws.com']
 
 
 # CSRF_COOKIE_SECURE = True
