@@ -324,7 +324,7 @@ def logout_page(request):
     logout(request)
     return redirect('login')
 
-@login_required(login_url='login')
+# @login_required(login_url='login')
 def search(request):
     
     if request.method=="POST":
@@ -341,7 +341,7 @@ def search(request):
         return render(request,'search.html',context)
     return render(request,'search.html')
          
-@login_required(login_url='login')
+# @login_required(login_url='login')
 def music(request,id):
     
     token=get_token()
@@ -363,7 +363,7 @@ def music(request,id):
     except:
         return render(request,'music.html')
     
-@login_required(login_url='login')
+# @login_required(login_url='login')
 def profile(request,id):
     
     artist=artist_overview(id)
