@@ -8,7 +8,8 @@
 
 body {
     color: #fff;
-    background-color: #121212;
+    background-color: #121212 !important;
+    /* background-color: red; */
     height: 100vh;
     margin: 0;
     padding: 0;
@@ -94,11 +95,25 @@ body a {
 
 
 /* Header Styles */
-header {
+.header-container {
     background-color: #181818;
     padding: 20px;
     display: flex;
     justify-content: space-between;
+    align-items: center;
+}
+
+.humbuger{
+    display: none;
+}
+
+.humbuger img {
+    height: 40px;
+}
+
+.humbuger-container {
+    background-color: #121212 !important;
+    color: white !important;
 }
 
 .search-bar {
@@ -108,7 +123,7 @@ header {
     background-color: #2a2a2a;
     border-radius: 20px;
     padding: 10px;
-    width: 390px;
+    width: 20rem;
 }
 
 .search-bar input[type="search"] {
@@ -141,7 +156,7 @@ header {
 .log-sign-btn button {
     border: none;
     border-radius: 1.5rem;
-    padding: 1rem 1.5rem;
+    padding: 1rem 1.3rem;
     background-color: #f0f0f0;
     cursor: pointer;
 }
@@ -317,6 +332,30 @@ header {
     font-size: 16px;
 }
 
+@media screen and (max-width: 768px) {
+    * {
+        font-size: 14px;
+    }
+
+    .sidebar,
+    #search-bar {
+        display: none;
+    }
+
+    .header-container{
+        padding: 10px;
+    }
+    .humbuger {
+        display: block;
+    }
+
+    .right-section {
+        margin: 0px;
+        padding: 10px;
+        width: 100vw;
+    }
+}
+
 
 /* Player Styles */
 .player {
@@ -408,13 +447,13 @@ header {
     font-size: 3em;
 }
 
-.none{
+.none {
     display: none;
 }
 
 .progress-bar {
     width: 100%;
-    background: #404040;
+    background: #404040 !important;
     border-radius: 2px;
     height: 5px;
     position: relative;
@@ -423,7 +462,7 @@ header {
 }
 
 .progress {
-    background: #1db954;
+    background: #1db954 !important;
     width: 1%;
     height: 100%;
     border-radius: 2px;
@@ -433,4 +472,8 @@ header {
     display: flex;
     justify-content: space-between;
     font-size: 1.2em;
+}
+
+.time-stamps span{
+    color: white !important;
 }

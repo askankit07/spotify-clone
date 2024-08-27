@@ -11,5 +11,4 @@ urlpatterns = [
     path('search',views.search,name='search'),
     path('music/<str:id>',views.music,name='music'),
     path('profile/<str:id>',views.profile,name='profile'),
-    
 ]

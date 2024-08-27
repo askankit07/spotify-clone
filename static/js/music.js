@@ -1,4 +1,5 @@
 // Adding play Pause functionalty   
+
 const audioPlayer=document.querySelector("#audio-player")
 const playPauseBtn=document.querySelector("#play-pause")
 const play=document.querySelector("#play")

@@ -353,11 +353,11 @@ def music(request,id):
         artists_name=metadata[0].get('artists')
 
         query=f"{track_name} {artists_name}"         #Create a query for the song
-        audio_details=get_audio_details(query)      
+        # audio_details=get_audio_details(query)      
 
         context={
             'metadata':metadata,
-            'audio_details':audio_details
+            # 'audio_details':audio_details
         }
         return render(request,'music.html',context)
     except:
@@ -371,3 +371,5 @@ def profile(request,id):
         "artist_data":artist
     }
     return render(request,'profile.html',context)
+
+ 

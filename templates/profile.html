@@ -9,7 +9,7 @@
   <title>Artist Profile</title>
   <link rel="stylesheet" type="text/css" href="{% static 'css/profile-style.css' %}" />
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.1.4/dist/tailwind.min.css" rel="stylesheet">
-  <link rel="shortcut icon" type="image/png" href="{% static 'img/favicon.png' %}" >
+  <link rel="shortcut icon" type="image/png" href="{% static 'img/favicon.png' %}">
   <style>
     .artist-header {
       background-image: url('https://cdn.punchng.com/wp-content/uploads/2023/05/20120536/Rema.jpeg');
@@ -57,7 +57,7 @@
         <span class="sidebar-link-text">Liked Songs</span>
       </a>
       <!-- Repeat for each item -->
-      
+
       <a href="#" class="sidebar-link">
         <span class="sidebar-link-icon">🎹</span>
         <span class="sidebar-link-text">Arijit Singh</span>
@@ -91,8 +91,8 @@
 
     <!-- Popular Tracks Section -->
     <div class="p-5">
-        <h2 class="text-2xl font-bold mb-4">Top Songs</h2>
-        
+      <h2 class="text-2xl font-bold mb-4">Top Songs</h2>
+
       <div class="divide-y divide-gray-800">
         <!-- Single Track Row -->
         {% for track in artist_data.topTracks %}
@@ -114,8 +114,6 @@
       <!-- Repeat for other tracks -->
     </div>
     <!-- <a href="#" class="text-green-500 text-sm">See more</a> -->
-  </div>
-
   </div>
 
 </body>
