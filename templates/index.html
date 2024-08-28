@@ -8,65 +8,8 @@
 
 {% block content %}
   <div class="right-section">
-    <header class="header-container">
-      <div class="humbuger">
-        <button class="btn" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasScrolling" aria-controls="offcanvasScrolling"><img src="{% static 'img/hamburger.svg' %}" alt="hamburger icon" /></button>
-
-        <div class="offcanvas offcanvas-start humbuger-container" data-bs-scroll="true" data-bs-backdrop="false" tabindex="-1" id="offcanvasScrolling" aria-labelledby="offcanvasScrollingLabel">
-          <div class="offcanvas-header">
-            <form action="search" method="post">
-              {% csrf_token %}
-              <div class="offcanvas-title search-bar" id="offcanvasScrollingLabel">
-                <input type="search" name="query" placeholder="What do you want to listen to?" aria-label="Search" />
-                <button type="submit" aria-label="Search">🔍</button>
-              </div>
-            </form>
-            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close" style="background-color: white; border: none; padding: 16px;"></button>
-          </div>
-          <div class="offcanvas-body">
-            <!-- Welcome User -->
-            {% if request.user.is_authenticated %}
-              <div class="sidebar-section">
-                <span class="sidebar-link-icon">👤</span>
-                <b>Welcome, {{ name }}</b>
-                <br /><br />
-                <a href="{% url 'logout' %}">
-                  <span class="sidebar-link-icon">↪️</span>
-                  <b>Logout</b>
-                </a>
-              </div>
-            {% endif %}
-
-            <!-- Top section of the sidebar -->
-            <div class="sidebar-section">
-              <a href="{% url 'home' %}" class="sidebar-link active">
-                <span class="sidebar-link-icon">🏠</span>
-                Home
-              </a>
-              <a href="" class="sidebar-link">
-                <span class="sidebar-link-icon">🎵</span>
-                Your Library
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <form action="search" method="POST">
-        {% csrf_token %}
-        <div class="search-bar" id="search-bar">
-          <input type="search" name="query" placeholder="What do you want to listen to?" aria-label="Search" />
-          <button type="submit" aria-label="Search">🔍</button>
-        </div>
-      </form>
-      {% if not request.user.is_authenticated %}
-        <div class="log-sign-btn">
-          <a href="{% url 'signup' %}"><button><span>Sign up</span></button></a>
-          <a href="{% url 'login' %}"><button><span>Log in</span></button></a>
-        </div>
-      {% endif %}
-    </header>
-    <div class="search-title">Top Artists</div>
+    
+    <div class="top-artists">Top Artists</div>
 
     <main class="main-section">
       <section>
