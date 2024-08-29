@@ -11,6 +11,11 @@ import base64
 
 rapidapiKey="fd7b21bf88msha8fa49f7d9b78cdp16d31ejsnd6b648d19af2"
 
+def get_userName(request):
+    name=request.user.first_name
+    firstName=name.split(' ')
+    return firstName[0]
+
 def get_token():
     client_id="1be6773226b941b0848da092cce99e5d"
     client_secret="b6a95bf8262445e580b7cc0675a78aae"
@@ -262,9 +267,8 @@ def home(request):
     }
     
     if request.user.is_authenticated:
-        name=request.user.first_name
-        firstName=name.split(' ')
-        return render(request,'index.html',{'name':firstName[0],"top_artists":top_artists,'tracks':tracks,})
+        name=get_userName(request)
+        return render(request,'index.html',{'name':name,"top_artists":top_artists,'tracks':tracks,})
     else:
         return render(request,'index.html',context)    
 
@@ -340,6 +344,7 @@ def search(request):
         
         return render(request,'search.html',context)
     return render(request,'search.html')
+
          
 # @login_required(login_url='login')
 def music(request,id):
@@ -353,11 +358,11 @@ def music(request,id):
         artists_name=metadata[0].get('artists')
 
         query=f"{track_name} {artists_name}"         #Create a query for the song
-        # audio_details=get_audio_details(query)      
+        audio_details=get_audio_details(query)      
 
         context={
             'metadata':metadata,
-            # 'audio_details':audio_details
+            'audio_details':audio_details
         }
         return render(request,'music.html',context)
     except:
@@ -372,4 +377,3 @@ def profile(request,id):
     }
     return render(request,'profile.html',context)
 
- 
