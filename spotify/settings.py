@@ -32,11 +32,14 @@ ADMINS = [('Ankit goswami', 'askankit07@gmail.com')]
 ALLOWED_HOSTS = ['127.0.0.1','https://9hmn06djz0.execute-api.us-west-2.amazonaws.com']
 
 CSRF_TRUSTED_ORIGINS = [
+    'http://9hmn06djz0.execute-api.us-west-2.amazonaws.com',
     'https://9hmn06djz0.execute-api.us-west-2.amazonaws.com',
     # Add any other trusted origins here
 ]
 
-CSRF_COOKIE_SECURE = True
+CSRF_COOKIE_SECURE = False
+SESSION_COOKIE_SECURE = False
+
 
 # Application definition
 
