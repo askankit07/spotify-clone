@@ -29,11 +29,11 @@ DEBUG = True
 ADMINS = [('Ankit goswami', 'askankit07@gmail.com')]
 
 
-ALLOWED_HOSTS = ['127.0.0.1','https://9hmn06djz0.execute-api.us-west-2.amazonaws.com']
+ALLOWED_HOSTS = ['44.211.223.234']
 
 CSRF_TRUSTED_ORIGINS = [
-    'http://9hmn06djz0.execute-api.us-west-2.amazonaws.com',
-    'https://9hmn06djz0.execute-api.us-west-2.amazonaws.com',
+    'http://44.211.223.234',
+    'https://44.211.223.234'
     # Add any other trusted origins here
 ]
 
