@@ -29,11 +29,11 @@ DEBUG = True
 ADMINS = [('Ankit goswami', 'askankit07@gmail.com')]
 
 
-ALLOWED_HOSTS = ['44.211.223.234']
+ALLOWED_HOSTS = ['*']
 
 CSRF_TRUSTED_ORIGINS = [
-    'http://44.211.223.234',
-    'https://44.211.223.234'
+    # 'http://44.211.223.234',
+    # 'https://44.211.223.234'
     # Add any other trusted origins here
 ]
 
