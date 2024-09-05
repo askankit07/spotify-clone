@@ -29,7 +29,7 @@ DEBUG = True
 ADMINS = [('Ankit goswami', 'askankit07@gmail.com')]
 
 
-ALLOWED_HOSTS = ['157.245.100.189']
+ALLOWED_HOSTS = ['*','157.245.100.189']
 
 CSRF_TRUSTED_ORIGINS = [
     'http://157.245.100.189',
