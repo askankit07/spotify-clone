@@ -9,7 +9,7 @@ import requests
 import json
 import base64
 
-rapidapiKey="fd7b21bf88msha8fa49f7d9b78cdp16d31ejsnd6b648d19af2"
+rapidapiKey="dddb4e21b2msh641b18ef0b18037p1e50bcjsn612f78605b36"
 
 def get_userName(request):
     name=request.user.first_name

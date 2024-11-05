@@ -1,0 +1,121 @@
+
+.artist-container {
+  margin-left: 16rem;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.artist-header {
+  position: relative;
+}
+
+.artist-header-image {
+  height: 600px;
+  width: 100%;
+  object-fit: cover;
+}
+
+.artist-header-info {
+  position: absolute;
+  bottom: 0;
+  padding: 1.25rem;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.artist-verified {
+  display: flex;
+  align-items: center;
+}
+
+.verified-icon {
+  height: 1.5rem;
+  width: 1.5rem;
+  color: #3b82f6;
+}
+
+.verified-text {
+  font-size: 0.875rem;
+  color: #d1d5db; 
+  margin-left: 0.25rem;
+}
+
+.artist-name {
+  font-size: 3rem;
+  font-weight: 700;
+  color: white;
+  margin-top: 0.5rem;
+}
+
+.artist-followers {
+  color: #d1d5db; 
+}
+
+.popular-tracks {
+  padding: 1.25rem;
+}
+
+.tracks-title {
+  color: white ;
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.tracks-list {
+  border-top: 1px solid #1f2937; 
+}
+
+.track-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  align-items: center;
+  padding: 0.75rem 0;
+  border-bottom: 1px solid #1f2937; 
+}
+
+.track-info {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.track-info a{
+  color: white;
+}
+
+.track-image {
+  width: 3rem;
+  height: 3rem;
+}
+
+.track-name {
+  font-size: 1rem;
+  font-weight: 500;
+  margin: 0px;
+}
+
+.track-artist {
+  font-size: 0.75rem;
+  color: #9ca3af;
+  margin: 0px;
+}
+
+.track-playcount,
+.track-duration {
+  justify-self: end;
+  color: #9ca3af;
+}
+
+.see-more {
+  color: #22c55e;
+  font-size: 0.875rem;
+}
+
+
+@media screen and (max-width: 768px) {
+  .artist-container {
+    margin: 0px;
+  }
+}
